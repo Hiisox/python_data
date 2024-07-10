@@ -1,8 +1,9 @@
 from PIL import Image
 import numpy as np
+from array import array
 
 
-def ft_load(path: str) -> list:
+def ft_load(path: str) -> array:
     try:
         img = Image.open(path)
     except Exception:
