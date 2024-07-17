@@ -4,6 +4,9 @@ import pandas as pd
 
 
 def main():
+    """
+        caca
+    """
     life_expectancy = load("life_expectancy_years.csv")
     if life_expectancy is None:
         return
