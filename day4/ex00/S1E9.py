@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+
+
 class Character(ABC):
     """main class, abstracted class"""
     def __init__(self, first_name, is_alive=True):
@@ -10,7 +12,7 @@ class Character(ABC):
     def die(self):
         pass
 
-        
+
 class Stark(Character):
     """Class Stark who inerite from Character """
     def die(self):

@@ -10,14 +10,11 @@ class Baratheon(Character):
         self.eyes = "brown"
         self.hairs = "dark"
 
-
     def __str__(self):
-        return f"Vector: ('Baratheon', 'brown', 'dark')"
-
+        return "Vector: ('Baratheon', 'brown', 'dark')"
 
     def __repr__(self):
-        return f"Vector: ('Baratheon', 'brown', 'dark')"
-
+        return "Vector: ('Baratheon', 'brown', 'dark')"
 
     def die(self):
         """Set is_alive to false"""
@@ -33,19 +30,15 @@ class Lannister(Character):
         self.eyes = "blue"
         self.hairs = "light"
 
-
     def __str__(self):
-        return f"Vector: ('Lannister', 'blue', 'light')"
-
+        return "Vector: ('Lannister', 'blue', 'light')"
 
     def __repr__(self):
-        return f"Vector: ('Lannister', 'blue', 'light')"
-
+        return "Vector: ('Lannister', 'blue', 'light')"
 
     def die(self):
         """Set is_alive to false"""
         self.is_alive = False
-
 
     @classmethod
     def create_lannister(cls, first_name, is_alive=True):
