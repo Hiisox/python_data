@@ -1,4 +1,6 @@
 def ft_statistics(*args: any, **kwargs: any) -> None:
+    """Check if args are valids then call the fonction \
+print_arg"""
     if checker(args, kwargs) is False:
         print("ERROR")
         return
@@ -8,6 +10,8 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
 
 
 def print_arg(myList: list, kwargs: dict):
+    """Check which arguments need to be called then call \
+the fonctions"""
     str_tab = ["mean", "median", "quartile", "var", "std"]
     function_tab = [mean, median, quartile, var, std]
     for key in kwargs:
@@ -19,7 +23,8 @@ def print_arg(myList: list, kwargs: dict):
     return
 
 
-def checker(*args:any, **kwargs:any) -> bool:
+def checker(*args: any, **kwargs: any) -> bool:
+    """checker fonction"""
     for x in args[0]:
         if type(x) not in [int, float]:
             return False
@@ -27,6 +32,7 @@ def checker(*args:any, **kwargs:any) -> bool:
 
 
 def mean(myList: list):
+    """return the mean of a list"""
     if len(myList) == 0:
         return "ERROR"
     mean = 0
@@ -37,34 +43,36 @@ def mean(myList: list):
 
 
 def median(myList: list):
+    """return the median of a fonction"""
     if len(myList) == 0:
         return "ERROR"
     index = len(myList)
     if index % 2 != 0:
         index = int(index / 2 - 0.5)
         return myList[index]
-    else :
+    else:
         index = int(index / 2 - 1)
         return (myList[index] + myList[index + 1]) / 2
 
 
 def quartile(myList: list):
+    """return the quartile of a list"""
     if len(myList) == 0:
         return "ERROR"
     value = len(myList)
     value2 = value
-    value2 = value2/ 4
+    value2 = value2 / 4
     quartile = []
     value2 = int(value2)
     quartile.append(myList[value2])
-    value2 = (3 * value)/ 4
+    value2 = (3 * value) / 4
     value2 = int(value2)
     quartile.append(myList[value2])
     return quartile
 
 
-
 def var(myList: list):
+    """return the var of a list"""
     if len(myList) == 0:
         return "ERROR"
     mean_var = mean(myList)
@@ -77,15 +85,7 @@ def var(myList: list):
 
 
 def std(myList: list):
+    """return the std of a list"""
     if len(myList) == 0:
         return "ERROR"
     return var(myList) ** 0.5
-
-
-ft_statistics(1, 42, 360, 11, 64, toto="mean", tutu="median", tata="quartile")
-print("-----")
-ft_statistics(5, 75, 450, 18, 597, 27474, 48575, hello="std", world="var")
-print("-----")
-ft_statistics(5, 75, 450, 18, 597, 27474, 48575, ejfhhe="heheh", ejdjdejn="kdekem")
-print("-----")
-ft_statistics(toto="mean", tutu="median", tata="quartile")
